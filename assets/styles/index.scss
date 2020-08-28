@@ -1,1 +1,44 @@
 @import '~bootstrap/scss/bootstrap';
+
+.container {
+  height: 100vh;
+}
+
+.game-board {
+  background-color: #90EE90;
+  margin: auto;
+  max-height: calc(100vh - 100px);
+  max-width: calc(100vh - 100px);
+}
+
+.box {
+  align-items: center;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  display: flex;
+  font-size: 7vh;
+  justify-content: center;
+  min-height: calc(100% / 3);
+  min-width: calc(100% / 3);
+
+  &:nth-child(3n) {
+    border-right: 0px;
+  }
+
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0px;
+  }
+
+  &:hover {
+    background-color: #B19CD9;
+  }
+}
+
+.game {
+  align-items: center;
+}
+
+h2 {
+  color: red;
+  text-align: center;
+}

@@ -34,11 +34,23 @@ const passwordChangeFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#sign-out-message').text('Succesfully logged out')
+  $('#game').hide()
   $('#create-game').hide()
+  $('#change-password').hide()
+  $('sign-out').hide()
 }
 
 const signOutFailed = function () {
   $('sign-out-message').text('could not sign out')
+}
+
+const createGameSuccess = function (response) {
+  $('#create-game').text('You have successfully created a game!')
+  $('#game').show()
+}
+
+const createGameFailure = function () {
+  $('#create-game').text('Could not load game succesfully')
 }
 
 module.exports = {
@@ -49,5 +61,7 @@ module.exports = {
   passwordChangeSuccess,
   passwordChangeFailure,
   signOutSuccess,
-  signOutFailed
+  signOutFailed,
+  createGameSuccess,
+  createGameFailure
 }

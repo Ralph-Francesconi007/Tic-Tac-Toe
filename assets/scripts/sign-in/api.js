@@ -20,7 +20,7 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('this is the data for changePassword', data, store.user.token)
+  console.log(store.user.token)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -32,10 +32,20 @@ const changePassword = function (data) {
 }
 
 const signOut = function (data) {
-  console.log('this is the data for the signOut', data)
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
+const createGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -47,5 +57,6 @@ module.exports = {
   signUp: signUp,
   signIn: signIn,
   changePassword: changePassword,
-  signOut: signOut
+  signOut: signOut,
+  createGame: createGame
 }
