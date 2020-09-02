@@ -1,5 +1,7 @@
 'use strict'
 
+const ticEvents = require('./sign-in/events')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -8,4 +10,12 @@
 
 $(() => {
   // your JS code goes here
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#create-game').hide()
+  $('#sign-up').on('submit', ticEvents.handleSignUp)
+  $('#sign-in').on('submit', ticEvents.handleSignIn)
+  $('#change-password').on('submit', ticEvents.handlePasswordChange)
+  $('#sign-out').on('submit', ticEvents.handleSignOut)
+  $('#create-game').on('submit', ticEvents.handleCreateGame)
 })
