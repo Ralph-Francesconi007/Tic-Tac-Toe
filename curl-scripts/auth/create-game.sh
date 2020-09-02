@@ -6,8 +6,7 @@ curl "https://tic-tac-toe-api-production.herokuapp.com/games" \
   --data '{
     "game":{
     "cells":["","","","","","","","",""],
-    "over":false,
-  }
+    "over":false
 }'
 
 echo

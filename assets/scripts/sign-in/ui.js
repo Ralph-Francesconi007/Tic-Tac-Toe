@@ -45,6 +45,11 @@ const signOutFailed = function () {
 }
 
 const createGameSuccess = function (response) {
+<<<<<<< HEAD
+=======
+  store.game = response.game
+  console.log(response)
+>>>>>>> 80dcb97... Made some changes to the createGame function
   $('#create-game').text('You have successfully created a game!')
   $('#game').show()
 }
