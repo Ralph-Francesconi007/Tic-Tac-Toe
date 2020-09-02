@@ -1,5 +1,6 @@
 const api = require('../assets/scripts/sign-in/api')
 const ui = require('../assets/scripts/sign-in/ui')
+// const store = require('../assets/scripts/store')
 // Track board with javascript array
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 // Don't let the users switch between X and O
@@ -9,7 +10,6 @@ let gameOver = false
 // Winning/tie/current players turn
 const tieMessage = () => 'It looks like you guys had a tie, would you like to play again?'
 const currentPlayerTurn = () => `It is ${currentPlayer}'s turn`
-const spotTaken = () => 'Im sorry but that spot is taken, try again'
 const winningMessage = () => `Congrats ${currentPlayer} you won! Would you like to play again?`
 
 // Create win array for game
@@ -55,6 +55,7 @@ const gameWin = function () {
     arr.push(gameBoard[winCombo[2]])
     if (arr[0] === arr[1] && arr[1] === arr[2] && arr[0] !== '') {
       gameOver = true
+      console.log(gameOver)
       $('#player-win-message').text(winningMessage)
     }
   }
