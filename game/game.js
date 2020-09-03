@@ -1,5 +1,5 @@
 const api = require('../assets/scripts/sign-in/api')
-const ui = require('../assets/scripts/sign-in/ui')
+// const ui = require('../assets/scripts/sign-in/ui')
 // const store = require('../assets/scripts/store')
 // Track board with javascript array
 let gameBoard = ['', '', '', '', '', '', '', '', '']
@@ -53,7 +53,6 @@ const gameWin = function () {
     arr.push(gameBoard[winCombo[0]])
     arr.push(gameBoard[winCombo[1]])
     arr.push(gameBoard[winCombo[2]])
-    console.log(arr)
     if (arr[0] === arr[1] && arr[1] === arr[2] && arr[0] !== '') {
       gameOver = true
       $('#player-win-message').html(winningMessage)
@@ -74,10 +73,7 @@ const gameTie = function () {
 const restartGame = function (event) {
   gameOver = false
   currentPlayer = 'X'
-  gameBoard = ['', '', '', '', '', '', '', '']
-  event.preventDefault()
-  api.createGame()
-    .then(ui.newGameMessage)
+  gameBoard = ['', '', '', '', '', '', '', '', '']
 }
 
 module.exports = {

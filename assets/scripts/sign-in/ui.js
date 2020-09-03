@@ -34,6 +34,7 @@ const passwordChangeFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#sign-out-message').text('Succesfully logged out')
+  $('sign-up').trigger('reset')
   $('#game').hide()
   $('#create-game').hide()
   $('#change-password').hide()
@@ -46,9 +47,10 @@ const signOutFailed = function () {
 
 const createGameSuccess = function (response) {
   store.game = response.game
-  console.log(response)
   $('#create-game').text('You have successfully created a game!')
   $('#game').show()
+  $('#restart-game').show()
+  $('#get-game').show()
 }
 
 const createGameFailure = function () {

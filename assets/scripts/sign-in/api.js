@@ -48,21 +48,28 @@ const createGame = function (data) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-
-
     data: data
   })
 }
 
 const updateGame = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
+    data: data
+  })
+}
 
+const getGames = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.length,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.game
+    },
     data: data
   })
 }
@@ -72,10 +79,7 @@ module.exports = {
   signIn: signIn,
   changePassword: changePassword,
   signOut: signOut,
-
-
-
   createGame: createGame,
-  updateGame: updateGame
-
+  updateGame: updateGame,
+  getGames: getGames
 }

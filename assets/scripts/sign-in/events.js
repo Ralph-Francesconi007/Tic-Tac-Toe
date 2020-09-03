@@ -49,10 +49,25 @@ const handleCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
+const handleRestartGame = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.createGame(data)
+    .then(ui.newGameMessage)
+}
+
+const handleGetGames = function (event) {
+  event.preventDefault()
+  api.getGames()
+}
+
 module.exports = {
   handleSignUp: handleSignUp,
   handleSignIn: handleSignIn,
   handlePasswordChange: handlePasswordChange,
   handleSignOut: handleSignOut,
-  handleCreateGame: handleCreateGame
+  handleCreateGame: handleCreateGame,
+  handleRestartGame: handleRestartGame,
+  handleGetGames: handleGetGames
 }
