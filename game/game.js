@@ -53,10 +53,10 @@ const gameWin = function () {
     arr.push(gameBoard[winCombo[0]])
     arr.push(gameBoard[winCombo[1]])
     arr.push(gameBoard[winCombo[2]])
+    console.log(arr)
     if (arr[0] === arr[1] && arr[1] === arr[2] && arr[0] !== '') {
       gameOver = true
-      console.log(gameOver)
-      $('#player-win-message').text(winningMessage)
+      $('#player-win-message').html(winningMessage)
     }
   }
 }

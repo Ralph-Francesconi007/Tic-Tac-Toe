@@ -47,17 +47,6 @@ const handleCreateGame = function (event) {
   api.createGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
-
-}
-
-let player = 'X'
-
-const onBoxClick = function (event) {
-  const box = $(event.target)
-  box.text(player)
-  player = player === 'X' ? 'O' : 'X'
-
-
 }
 
 module.exports = {
@@ -65,9 +54,5 @@ module.exports = {
   handleSignIn: handleSignIn,
   handlePasswordChange: handlePasswordChange,
   handleSignOut: handleSignOut,
-
-  handleCreateGame: handleCreateGame,
-  onBoxClick: onBoxClick
-
-
+  handleCreateGame: handleCreateGame
 }

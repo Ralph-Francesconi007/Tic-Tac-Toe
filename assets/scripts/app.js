@@ -20,10 +20,6 @@ $(() => {
   $('#change-password').on('submit', ticEvents.handlePasswordChange)
   $('#sign-out').on('submit', ticEvents.handleSignOut)
   $('#create-game').on('submit', ticEvents.handleCreateGame)
-
-  $('#game').on('click', ticEvents.onBoxClick)
-
   $('#game').on('click', gameEvents.onBoxClick)
   $('#restart-game').on('submit', gameEvents.restartGame)
-
 })
