@@ -55,6 +55,10 @@ const createGameFailure = function () {
   $('#create-game').text('Could not load game succesfully')
 }
 
+const newGameMessage = function (response) {
+  store.game = response.game
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -65,5 +69,6 @@ module.exports = {
   signOutSuccess,
   signOutFailed,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  newGameMessage
 }
