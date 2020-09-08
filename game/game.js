@@ -28,7 +28,7 @@ const onBoxClick = function (event) {
   if ((gameOver === false) && ($(box).text() !== 'X') && ($(box).text() !== 'O')) {
     const dataCell = $(box).attr('data-cell-index')
     gameBoard[dataCell] = currentPlayer
-    $(box).text(currentPlayer)
+    $(box).text(`${currentPlayer}`)
     gameWin()
     gameTie()
     const data = {
@@ -69,8 +69,7 @@ const gameTie = function () {
   }
 }
 
-// restart the game function
-const restartGame = function (event) {
+const newGame = function () {
   gameOver = false
   currentPlayer = 'X'
   gameBoard = ['', '', '', '', '', '', '', '', '']
@@ -78,5 +77,5 @@ const restartGame = function (event) {
 
 module.exports = {
   onBoxClick: onBoxClick,
-  restartGame: restartGame
+  newGame: newGame
 }

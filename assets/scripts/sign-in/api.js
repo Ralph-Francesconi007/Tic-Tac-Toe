@@ -1,6 +1,7 @@
 'use strict'
 
 const config = require('./../config')
+const events = require('./events')
 const store = require('../store')
 
 const signUp = function (data) {
@@ -65,11 +66,8 @@ const updateGame = function (data) {
 
 const getGames = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game.length,
+    url: config.apiUrl + '/games' + store.game.length,
     method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + store.user.game
-    },
     data: data
   })
 }

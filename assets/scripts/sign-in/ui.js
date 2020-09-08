@@ -47,9 +47,9 @@ const signOutFailed = function () {
 
 const createGameSuccess = function (response) {
   store.game = response.game
-  $('#create-game').text('You have successfully created a game!')
+  $('.box').html('')
+  // $('#create-game').text('You have successfully created a game!')
   $('#game').show()
-  $('#restart-game').show()
   $('#get-game').show()
 }
 
@@ -57,8 +57,8 @@ const createGameFailure = function () {
   $('#create-game').text('Could not load game succesfully')
 }
 
-const newGameMessage = function (response) {
-  store.game = response.game
+const getGamesSuccess = function (response) {
+  // store.game = response.game
 }
 
 module.exports = {
@@ -72,5 +72,5 @@ module.exports = {
   signOutFailed,
   createGameSuccess,
   createGameFailure,
-  newGameMessage
+  getGamesSuccess
 }
