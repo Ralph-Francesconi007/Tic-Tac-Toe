@@ -40,13 +40,10 @@ const handleSignOut = function (event) {
     .catch(ui.signOutFailed)
 }
 
-const handleCreateGame = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.createGame(data)
-    .then(ui.createGameSuccess)
-    .catch(ui.createGameFailure)
+const handleGetGames = function (event) {
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
 }
 
 module.exports = {
@@ -54,5 +51,5 @@ module.exports = {
   handleSignIn: handleSignIn,
   handlePasswordChange: handlePasswordChange,
   handleSignOut: handleSignOut,
-  handleCreateGame: handleCreateGame
+  handleGetGames: handleGetGames
 }

@@ -28,7 +28,7 @@ const onBoxClick = function (event) {
   if ((gameOver === false) && ($(box).text() !== 'X') && ($(box).text() !== 'O')) {
     const dataCell = $(box).attr('data-cell-index')
     gameBoard[dataCell] = currentPlayer
-    $(box).text(currentPlayer)
+    $(box).html(currentPlayer)
     gameWin()
     gameTie()
     const data = {
@@ -53,10 +53,9 @@ const gameWin = function () {
     arr.push(gameBoard[winCombo[0]])
     arr.push(gameBoard[winCombo[1]])
     arr.push(gameBoard[winCombo[2]])
-    console.log(arr)
     if (arr[0] === arr[1] && arr[1] === arr[2] && arr[0] !== '') {
       gameOver = true
-      $('#player-win-message').html(winningMessage)
+      $('#player-win-message').text(winningMessage)
     }
   }
 }
@@ -70,17 +69,15 @@ const gameTie = function () {
   }
 }
 
-// restart the game function
-const restartGame = function (event) {
-  gameOver = false
+const handleCreateGame = function (event) {
+  gameBoard = ['', '', '', '', '', '', '', '', '']
   currentPlayer = 'X'
-  gameBoard = ['', '', '', '', '', '', '', '']
-  event.preventDefault()
+  gameOver = false
   api.createGame()
-    .then(ui.newGameMessage)
+    .then(ui.createGameSuccess)
 }
 
 module.exports = {
   onBoxClick: onBoxClick,
-  restartGame: restartGame
+  handleCreateGame: handleCreateGame
 }

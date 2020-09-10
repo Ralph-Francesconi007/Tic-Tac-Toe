@@ -1,6 +1,6 @@
 'use strict'
 
-const ticEvents = require('./sign-in/events')
+const events = require('./sign-in/events')
 const gameEvents = require('../../game/game.js')
 
 // use require with a reference to bundle the file and use it in this file
@@ -15,11 +15,13 @@ $(() => {
   $('#sign-out').hide()
   $('#create-game').hide()
   $('#game').hide()
-  $('#sign-up').on('submit', ticEvents.handleSignUp)
-  $('#sign-in').on('submit', ticEvents.handleSignIn)
-  $('#change-password').on('submit', ticEvents.handlePasswordChange)
-  $('#sign-out').on('submit', ticEvents.handleSignOut)
-  $('#create-game').on('submit', ticEvents.handleCreateGame)
+  $('#restart-game').hide()
+  $('#get-game').hide()
+  $('#sign-up').on('submit', events.handleSignUp)
+  $('#sign-in').on('submit', events.handleSignIn)
+  $('#change-password').on('submit', events.handlePasswordChange)
+  $('#sign-out').on('submit', events.handleSignOut)
+  $('#create-game').on('click', gameEvents.handleCreateGame)
   $('#game').on('click', gameEvents.onBoxClick)
-  $('#restart-game').on('submit', gameEvents.restartGame)
+  $('#get-game').on('click', events.handleGetGames)
 })

@@ -34,6 +34,7 @@ const passwordChangeFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#sign-out-message').text('Succesfully logged out')
+  $('sign-up').trigger('reset')
   $('#game').hide()
   $('#create-game').hide()
   $('#change-password').hide()
@@ -46,17 +47,23 @@ const signOutFailed = function () {
 
 const createGameSuccess = function (response) {
   store.game = response.game
-  console.log(response)
-  $('#create-game').text('You have successfully created a game!')
+  $('.box').html('')
+  $('#player-win-message').text('')
+  $('#player-tie-message').text('')
   $('#game').show()
+  $('#get-game').show()
 }
 
 const createGameFailure = function () {
   $('#create-game').text('Could not load game succesfully')
 }
 
-const newGameMessage = function (response) {
-  store.game = response.game
+const getGamesSuccess = function (response) {
+  $('#get-games').text(`You have played ${response.games.length} games`)
+}
+
+const getGamesFailure = function () {
+  $('#get-games').text('Could not load games')
 }
 
 module.exports = {
@@ -70,5 +77,6 @@ module.exports = {
   signOutFailed,
   createGameSuccess,
   createGameFailure,
-  newGameMessage
+  getGamesSuccess,
+  getGamesFailure
 }

@@ -84,28 +84,22 @@
 
       <section>
         <form id="create-game">
-          <button class="game" type="submit" value="Create Game!">Create Game!</button>
+          <button class="game" type="button" value="Create Game!">Create Game!</button>
         </form>
       </section>
 
-
-
       <section>
+        <p id="get-games"></p>
         <form id="get-game">
-          <button class="g-game" type="submit" value="Get Game!">Get Recent Games!</button>
+          <button class="g-game" type="button" value="Get Game!">Get Recent Games!</button>
         </form>
       </section>
-
-      <section>
-        <form id="restart-game">
-          <button class="rest-game" type="submit" value="Restart Game!">Restart Game!</button>
-        </form>
-      </section>
-
 
       <section>
         <form id="game">
           <h2>Tic Tac Toe!</h2>
+          <p id="player-win-message"></p>
+          <p id="player-tie-message"></p>
           <div class="container">
             <div class="row game-board h-100">
               <div class="col-4  box" data-cell-index=0></div>
@@ -117,11 +111,9 @@
               <div class="col-4  box" data-cell-index=6></div>
               <div class="col-4  box" data-cell-index=7></div>
               <div class="col-4  box" data-cell-index=8></div>
-
             </div>
           </div>
         </form>
       </section>
-
     </body>
 </html>
