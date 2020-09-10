@@ -5,7 +5,7 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailure = function () {
-  $('#message').text('Sign-Up Failed')
+  $('#message').text('Sign-Up Failed. Username already taken. Please try again')
 }
 
 const signInSuccess = function (response) {
@@ -20,7 +20,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function () {
-  $('#sign-in-message').text('Could not sign in')
+  $('#sign-in-message').text('Could not sign in. Please try again')
 }
 
 const passwordChangeSuccess = function (response) {
@@ -28,7 +28,7 @@ const passwordChangeSuccess = function (response) {
 }
 
 const passwordChangeFailure = function () {
-  $('#change-password-message').text('Could not succesfully change the password')
+  $('#change-password-message').text('Could not succesfully change the password. Please try again')
 }
 
 const signOutSuccess = function (response) {

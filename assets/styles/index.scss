@@ -1,5 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: #B5C9F8;
+}
+
 .container {
   height: 100vh;
 }
@@ -38,17 +42,44 @@
   align-items: center;
 }
 
-#player-win-message {
+#message {
   color: #1144D0;
+  font-size: 20px;
+  text-align: center;
+}
+
+#sign-in-message {
+  color: #AB495B;
+  font-size: 20px;
+  text-align: center;
+}
+
+#change-password-message {
+  color: #1144D0;
+  font-size: 20px;
+  text-align: center;
+}
+
+#sign-out-message {
+  color: #1144D0;
+  font-size: 20px;
+  text-align: center;
+}
+
+#player-win-message {
+  color: red;
+  font-size: 24px;
   text-align: center;
 }
 
 #player-tie-message {
-  color: #1144D0;
+  color: red;
+  font-size: 24px;
   text-align: center;
 }
 
 h1 {
+  color: #3FB42D;
   text-align: center;
 }
 

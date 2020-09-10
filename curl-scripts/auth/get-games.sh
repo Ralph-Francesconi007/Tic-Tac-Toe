@@ -1,10 +1,7 @@
-curl "https://tic-tac-toe-api-production.herokuapp.com/sign-in" \
+curl "https://tic-tac-toe-api-production.herokuapp.com/games" \
   --include \
   --request GET \
+  --header "Authorization: Bearer ${TOKEN}" \
   --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'"
-    }
-  }'
+
+echo
