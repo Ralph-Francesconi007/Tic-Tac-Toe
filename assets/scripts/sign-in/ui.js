@@ -2,16 +2,15 @@ const store = require('./../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Thanks for signing up ' + response.user.email)
-  $('#create-user').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#message').text('sign-up failed')
+  $('#message').text('Sign-Up Failed')
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#sign-in-message').text('You are signed in ' + response.user.email)
+  $('#sign-in-message').text('You are Signed in ' + response.user.email)
   $('#sign-in-message').trigger('reset')
   $('#create-game').show()
   $('#change-password').show()
@@ -33,16 +32,19 @@ const passwordChangeFailure = function () {
 }
 
 const signOutSuccess = function (response) {
-  $('#sign-out-message').text('Succesfully logged out')
-  $('sign-up').trigger('reset')
+  $('#sign-out-message').text('Succesfully logged out, Please Sign In')
+  $('#sign-in-message').text('')
   $('#game').hide()
   $('#create-game').hide()
   $('#change-password').hide()
-  $('sign-out').hide()
+  $('#change-password-message').text('')
+  $('#get-game').hide()
+  $('#get-games').text('')
+  $('#sign-out').hide()
 }
 
 const signOutFailed = function () {
-  $('sign-out-message').text('could not sign out')
+  $('#sign-out-message').text('could not sign out')
 }
 
 const createGameSuccess = function (response) {
