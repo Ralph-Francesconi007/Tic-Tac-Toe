@@ -49,7 +49,7 @@ const createGame = function (data) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: data
+    data: {}
   })
 }
 
@@ -66,8 +66,11 @@ const updateGame = function (data) {
 
 const getGames = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/games' + store.game.length,
+    url: config.apiUrl + '/games',
     method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
     data: data
   })
 }

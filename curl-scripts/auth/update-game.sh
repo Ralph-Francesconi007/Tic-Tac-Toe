@@ -1,14 +1,15 @@
-curl "https://tic-tac-toe-api-production.herokuapp.com/sign-in" \
+curl "https://tic-tac-toe-api-production.herokuapp.com/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
+  --header "Authorization: Bearer ${TOKEN}" \
   --data '{
     game: {
       cell: {
-        index: "'"${dataCell}"'",
-        value: "'"${currentPlayer}"'"
+        index: "'"${INDEX}"'",
+        value: "'"${VALUE}"'"
       },
-      over: "'"${gameOver}"'"
+      over: "'"${OVER}"'"
     }
   }
 }'

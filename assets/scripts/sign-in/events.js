@@ -3,11 +3,6 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const game = require('./../../../game/game')
-
-let gameOver = false
-let gameBoard = ['', '', '', '', '', '', '', '', '']
-let currentPlayer = 'X'
 
 const handleSignUp = function (event) {
   event.preventDefault()
@@ -45,18 +40,10 @@ const handleSignOut = function (event) {
     .catch(ui.signOutFailed)
 }
 
-const handleCreateGame = function (event) {
-  gameOver = false
-  currentPlayer = 'X'
-  gameBoard = ['', '', '', '', '', '', '', '', '']
-  console.log(gameOver)
-  api.createGame()
-    .then(ui.createGameSuccess)
-}
-
 const handleGetGames = function (event) {
   api.getGames()
     .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
 }
 
 module.exports = {
@@ -64,6 +51,5 @@ module.exports = {
   handleSignIn: handleSignIn,
   handlePasswordChange: handlePasswordChange,
   handleSignOut: handleSignOut,
-  handleCreateGame: handleCreateGame,
   handleGetGames: handleGetGames
 }

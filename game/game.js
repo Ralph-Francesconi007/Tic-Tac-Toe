@@ -1,5 +1,5 @@
 const api = require('../assets/scripts/sign-in/api')
-// const ui = require('../assets/scripts/sign-in/ui')
+const ui = require('../assets/scripts/sign-in/ui')
 // const store = require('../assets/scripts/store')
 // Track board with javascript array
 let gameBoard = ['', '', '', '', '', '', '', '', '']
@@ -28,7 +28,7 @@ const onBoxClick = function (event) {
   if ((gameOver === false) && ($(box).text() !== 'X') && ($(box).text() !== 'O')) {
     const dataCell = $(box).attr('data-cell-index')
     gameBoard[dataCell] = currentPlayer
-    $(box).text(`${currentPlayer}`)
+    $(box).html(currentPlayer)
     gameWin()
     gameTie()
     const data = {
@@ -55,7 +55,7 @@ const gameWin = function () {
     arr.push(gameBoard[winCombo[2]])
     if (arr[0] === arr[1] && arr[1] === arr[2] && arr[0] !== '') {
       gameOver = true
-      $('#player-win-message').html(winningMessage)
+      $('#player-win-message').text(winningMessage)
     }
   }
 }
@@ -69,13 +69,15 @@ const gameTie = function () {
   }
 }
 
-const newGame = function () {
-  gameOver = false
-  currentPlayer = 'X'
+const handleCreateGame = function (event) {
   gameBoard = ['', '', '', '', '', '', '', '', '']
+  currentPlayer = 'X'
+  gameOver = false
+  api.createGame()
+    .then(ui.createGameSuccess)
 }
 
 module.exports = {
   onBoxClick: onBoxClick,
-  newGame: newGame
+  handleCreateGame: handleCreateGame
 }

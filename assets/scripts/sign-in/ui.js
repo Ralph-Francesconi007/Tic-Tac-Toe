@@ -48,7 +48,8 @@ const signOutFailed = function () {
 const createGameSuccess = function (response) {
   store.game = response.game
   $('.box').html('')
-  // $('#create-game').text('You have successfully created a game!')
+  $('#player-win-message').text('')
+  $('#player-tie-message').text('')
   $('#game').show()
   $('#get-game').show()
 }
@@ -58,7 +59,11 @@ const createGameFailure = function () {
 }
 
 const getGamesSuccess = function (response) {
-  // store.game = response.game
+  $('#get-games').text(`You have played ${response.games.length} games`)
+}
+
+const getGamesFailure = function () {
+  $('#get-games').text('Could not load games')
 }
 
 module.exports = {
@@ -72,5 +77,6 @@ module.exports = {
   signOutFailed,
   createGameSuccess,
   createGameFailure,
-  getGamesSuccess
+  getGamesSuccess,
+  getGamesFailure
 }
