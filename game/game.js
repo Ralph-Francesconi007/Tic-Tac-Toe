@@ -8,7 +8,7 @@ let currentPlayer = 'X'
 // To tell if the game is over or not
 let gameOver = false
 // Winning/tie/current players turn
-const tieMessage = () => 'It looks like you guys had a tie, would you like to play again?'
+const tieMessage = () => 'It looks like you guys had a tie! Hit the Create Game button if you would like to play again!'
 const winningMessage = () => `Congrats ${currentPlayer} you won! Hit the Create Game button if you would you like to play again!`
 
 // Create win array for game
