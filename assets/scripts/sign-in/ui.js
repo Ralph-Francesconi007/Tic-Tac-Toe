@@ -2,15 +2,18 @@ const store = require('./../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Thanks for signing up ' + response.user.email)
+  $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#message').text('Sign-Up Failed. Username already taken. Please try again')
+  $('#message').text('Sign-Up Failed. Please try again')
+  $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
   $('#sign-in-message').text('You are Signed in ' + response.user.email)
+  $('#message').html('')
   $('#sign-in-message').trigger('reset')
   $('#create-game').show()
   $('#change-password').show()
@@ -21,18 +24,21 @@ const signInSuccess = function (response) {
 
 const signInFailure = function () {
   $('#sign-in-message').text('Could not sign in. Please try again')
+  $('#sign-in').trigger('reset')
 }
 
 const passwordChangeSuccess = function (response) {
   $('#change-password-message').text('You have succesfully changed the password')
+  $('#change-password').trigger('reset')
 }
 
 const passwordChangeFailure = function () {
   $('#change-password-message').text('Could not succesfully change the password. Please try again')
+  $('#change-password').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
-  $('#sign-out-message').text('Succesfully logged out, Please Sign In')
+  $('#sign-out-message').text('Successfully logged out, Please Sign In')
   $('#sign-in-message').text('')
   $('#game').hide()
   $('#create-game').hide()
@@ -44,15 +50,18 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailed = function () {
-  $('#sign-out-message').text('could not sign out')
+  $('#sign-out-message').text('Could not sign out')
 }
 
 const createGameSuccess = function (response) {
   store.game = response.game
   $('.box').html('')
+  $('#sign-in-message').html('')
+  $('#change-password-message').html('')
   $('#player-win-message').text('')
   $('#player-tie-message').text('')
   $('#game').show()
+  $('#get-games').html('')
   $('#get-game').show()
 }
 
@@ -62,6 +71,7 @@ const createGameFailure = function () {
 
 const getGamesSuccess = function (response) {
   $('#get-games').text(`You have played ${response.games.length} games`)
+  $('#get-game').hide()
 }
 
 const getGamesFailure = function () {
