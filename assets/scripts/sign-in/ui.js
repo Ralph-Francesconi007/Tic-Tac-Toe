@@ -14,12 +14,13 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#sign-in-message').text('You are Signed in ' + response.user.email)
   $('#message').html('')
-  $('#sign-in-message').trigger('reset')
+  $('#sign-in').trigger('reset')
   $('#create-game').show()
   $('#change-password').show()
   $('#sign-out').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#sign-out-message').html('')
 }
 
 const signInFailure = function () {
@@ -39,6 +40,8 @@ const passwordChangeFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#sign-out-message').text('Successfully logged out, Please Sign In')
+  $('#sign-up').show()
+  $('#sign-in').show()
   $('#sign-in-message').text('')
   $('#game').hide()
   $('#create-game').hide()
