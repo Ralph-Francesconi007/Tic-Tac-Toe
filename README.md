@@ -33,4 +33,4 @@ When it came to planning out my very first project I didn't know where to begin 
 
 # WireFrames
 
-![WireFrames](https://imgur.com/FamzPEF)
+![WireFrames](https://i.imgur.com/FamzPEF.jpg)
