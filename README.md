@@ -9,13 +9,18 @@ When it came to planning out my very first project I didn't know where to begin 
 
 # Technologies Used for Tic Tac Toe
 
-1. Ajax
-2. Jquery
-3. Bootstrap
-4. Javascript
-5. HTML
-6. CSS
-7. cURL
+1. *Ajax*
+2. *Jquery*
+3. *Bootstrap*
+4. *Javascript*
+5. *HTML*
+6. *CSS*
+7. *cURL*
+
+# Unsolved Problems
+- I want the user to be able to pick up off of a saved game and continue playing.
+- I want to allow the user to be able to play against an AI
+- I want the styling of the game board to pop and become more engaging in future edits.
 
 # User Stories
 
@@ -27,3 +32,5 @@ When it came to planning out my very first project I didn't know where to begin 
 6. As a user I want to be able to sign-out of the application when I am done playing.
 
 # WireFrames
+
+![WireFrames](https://imgur.com/FamzPEF)
