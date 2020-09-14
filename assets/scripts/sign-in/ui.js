@@ -2,11 +2,13 @@ const store = require('./../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Thanks for signing up ' + response.user.email)
+  $('#sign-out-message').html('')
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function () {
   $('#message').text('Sign-Up Failed. Please try again')
+  $('#sign-out-message').html('')
   $('#sign-up').trigger('reset')
 }
 
@@ -25,11 +27,12 @@ const signInSuccess = function (response) {
 
 const signInFailure = function () {
   $('#sign-in-message').text('Could not sign in. Please try again')
+  $('#sign-out-message').html('')
   $('#sign-in').trigger('reset')
 }
 
 const passwordChangeSuccess = function (response) {
-  $('#change-password-message').text('You have succesfully changed the password')
+  $('#change-password-message').text('You have succesfully changed the password.')
   $('#change-password').trigger('reset')
 }
 
