@@ -1,7 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
 body {
-  background-color: #B5C9F8;
+  background-color: #FFFF99;
 }
 
 .container {
@@ -40,6 +41,109 @@ body {
 
 .game {
   align-items: center;
+  border-radius: 4px;
+  color: #090C9B;
+  padding: 4px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  width: 10%;
+  height: 8%;
+}
+
+.signUp {
+  color: #F50052;
+  font-family: 'Playball', cursive;
+  font-size: 24px;
+}
+
+.signUpLegend {
+  font-size: 30px;
+}
+
+.signIn {
+  color: #F50052;
+  font-family: 'Playball', cursive;
+  font-size: 24px;
+}
+
+.signInLegend {
+  font-size: 30px;
+}
+
+.changePassword {
+  color: #F50052;
+  font-family: 'Playball', cursive;
+  font-size: 24px;
+}
+
+.changePassLegend {
+  font-size: 30px;
+}
+
+.button-sign-up {
+  border-radius: 4px;
+  color: #090C9B;
+  padding: 4px;
+  margin: 10px;
+  width: 8%;
+  height: 8%;
+}
+
+.button-sign-up:hover {
+  background-color: #F50052;
+}
+
+.button-sign-in {
+  border-radius: 4px;
+  color: #090C9B;
+  padding: 4px;
+  margin: 10px;
+  width: 8%;
+  height: 8%;
+}
+
+.button-sign-in:hover {
+  background-color: #F50052;
+}
+
+.changePassButton {
+  border-radius: 4px;
+  color: #090C9B;
+  padding: 4px;
+  margin: 10px;
+  width: 13%;
+  height: 8%;
+}
+
+.changePassButton:hover {
+  background-color: #F50052;
+}
+
+.g-game {
+  border-radius: 4px;
+  color: #090C9B;
+  padding: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 13%;
+  height: 8%;
+}
+
+.signOut {
+  border-radius: 4px;
+  color: #090C9B;
+  padding: 4px;
+  margin: 7px;
+  width: 8%;
+  height: 8%;
+}
+
+#button-sign-in {
+  text-align: center;
+}
+
+#button-sign-up {
+  text-align: center;
 }
 
 #message {
@@ -85,8 +189,9 @@ body {
 }
 
 h1 {
-  color: #3FB42D;
+  color: #F50052;
   text-align: center;
+  font-family: 'Playball', cursive;
 }
 
 h2 {

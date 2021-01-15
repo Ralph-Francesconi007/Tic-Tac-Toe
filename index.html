@@ -16,11 +16,16 @@
       <p id="message"></p>
       <p id="sign-out-message"></p>
 
+      <div style="text-align:center;">
+        <button type="button" class="button-sign-up">Sign-Up</button>
+        <button type="button" class="button-sign-in">Sign-In</button>
+      </div>
+
 
       <section>
-        <form id="sign-up">
+        <form id="sign-up" class="signUp">
           <fieldset>
-            <legend>Sign Up!</legend>
+            <legend class="signUpLegend">Sign Up!</legend>
 
             <label for="email">Email</label>
             <input name="credentials[email]" placeholder="Enter Email" type="email" value="">
@@ -42,9 +47,9 @@
 
 
       <section>
-        <form id="sign-in">
+        <form id="sign-in" class="signIn">
           <fieldset>
-            <legend>Sign In!</legend>
+            <legend class="signInLegend">Sign In!</legend>
 
             <label for="email">Email</label>
             <input name="credentials[email]" placeholder="Enter Email" type="email" value="">
@@ -60,10 +65,14 @@
 
       <p id="change-password-message"></p>
 
+      <div>
+        <button type="button" class="changePassButton">Change Password</button>
+      </div>
+
       <section>
-        <form id="change-password">
+        <form id="change-password" class="changePassword">
           <fieldset>
-            <legend>Change Password!</legend>
+            <legend class="changePassLegend">Change Password!</legend>
 
             <label for="old password">Old Password</label>
             <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -77,23 +86,18 @@
 
       </section>
 
-      <form id="sign-out">
-      <button type="submit">Sign out!</button>
-
-      </form>
-
-      <section>
+      <div style="text-align:center;">
         <form id="create-game">
           <button class="game" type="button" value="Create Game!">Create Game!</button>
         </form>
-      </section>
+      </div>
 
-      <section>
+      <div style="text-align:center;">
         <p id="get-games"></p>
         <form id="get-game">
           <button class="g-game" type="button" value="Get Game!">Get Recent Games!</button>
         </form>
-      </section>
+      </div>
 
       <section>
         <form id="game">
@@ -115,5 +119,9 @@
           </div>
         </form>
       </section>
+
+      <form id="sign-out">
+        <button class="signOut" type="submit">Sign out!</button>
+      </form>
     </body>
 </html>

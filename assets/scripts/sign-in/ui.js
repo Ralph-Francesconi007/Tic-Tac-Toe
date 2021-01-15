@@ -1,5 +1,12 @@
 const store = require('./../store')
 
+const showSignUp = function () {
+  $('#sign-up').show()
+  $('#sign-in').hide()
+  $('.button-sign-in').show()
+  $('.button-sign-up').hide()
+}
+
 const signUpSuccess = function (response) {
   $('#message').text('Thanks for signing up ' + response.user.email)
   $('#sign-out-message').html('')
@@ -12,17 +19,25 @@ const signUpFailure = function () {
   $('#sign-up').trigger('reset')
 }
 
+const showSignIn = function () {
+  $('#sign-in').show()
+  $('#sign-up').hide()
+  $('.button-sign-up').show()
+  $('.button-sign-in').hide()
+}
+
 const signInSuccess = function (response) {
   store.user = response.user
   $('#sign-in-message').text('You are Signed in ' + response.user.email)
   $('#message').html('')
   $('#sign-in').trigger('reset')
   $('#create-game').show()
-  $('#change-password').show()
+  $('.changePassButton').show()
   $('#sign-out').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out-message').html('')
+  $('.button-sign-up').hide()
 }
 
 const signInFailure = function () {
@@ -31,8 +46,16 @@ const signInFailure = function () {
   $('#sign-in').trigger('reset')
 }
 
+const changePass = function () {
+  $('#change-password').show()
+  $('.changePassButton').hide()
+}
+
 const passwordChangeSuccess = function (response) {
   $('#change-password-message').text('You have succesfully changed the password.')
+  $('#sign-in-message').html('')
+  $('#change-password').hide()
+  $('.changePassButton').show()
   $('#change-password').trigger('reset')
 }
 
@@ -43,8 +66,8 @@ const passwordChangeFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#sign-out-message').text('Successfully logged out, Please Sign In')
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('.button-sign-in').show()
+  $('.button-sign-up').show()
   $('#sign-in-message').text('')
   $('#game').hide()
   $('#create-game').hide()
@@ -53,6 +76,7 @@ const signOutSuccess = function (response) {
   $('#get-game').hide()
   $('#get-games').text('')
   $('#sign-out').hide()
+  $('.changePassButton').hide()
 }
 
 const signOutFailed = function () {
@@ -85,10 +109,13 @@ const getGamesFailure = function () {
 }
 
 module.exports = {
+  showSignUp,
   signUpSuccess,
   signUpFailure,
+  showSignIn,
   signInSuccess,
   signInFailure,
+  changePass,
   passwordChangeSuccess,
   passwordChangeFailure,
   signOutSuccess,
