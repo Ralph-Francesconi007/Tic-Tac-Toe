@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+      <title>Ralph Francesconi's Tic Tac Toe Game</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <body>
+
+      <h1>Play Tic Tac Toe!</h1>
+
+      <p id="message"></p>
+      <p id="sign-out-message"></p>
+
+      <div style="text-align:center;">
+        <button type="button" class="button-sign-up">Sign-Up</button>
+        <button type="button" class="button-sign-in">Sign-In</button>
+      </div>
+
+
+      <section>
+        <form id="sign-up" class="signUp">
+          <fieldset>
+            <legend class="signUpLegend">Sign Up!</legend>
+
+            <label for="email">Email</label>
+            <input name="credentials[email]" placeholder="Enter Email" type="email" value="">
+
+            <label for="password">Password</label>
+            <input name="credentials[password]" placeholder="Enter password" type="password" value="">
+
+            <label for="password_confirmation">Password Confirmation</label>
+            <input name="credentials[password_confirmation]" placeholder="Enter Password Confirmation" type="Password" value="">
+
+            <button type="submit">Sign Up!</button>
+
+          </fieldset>
+        </form>
+      </section>
+
+
+      <p id="sign-in-message"></p>
+
+
+      <section>
+        <form id="sign-in" class="signIn">
+          <fieldset>
+            <legend class="signInLegend">Sign In!</legend>
+
+            <label for="email">Email</label>
+            <input name="credentials[email]" placeholder="Enter Email" type="email" value="">
+
+            <label for="password">Password</label>
+            <input name="credentials[password]" placeholder="Enter password" type="password" value="">
+
+            <button type="submit">Sign In!</button>
+
+          </fieldset>
+        </form>
+      </section>
+
+      <p id="change-password-message"></p>
+
+      <div>
+        <button type="button" class="changePassButton">Change Password</button>
+      </div>
+
+      <section>
+        <form id="change-password" class="changePassword">
+          <fieldset>
+            <legend class="changePassLegend">Change Password!</legend>
+
+            <label for="old password">Old Password</label>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+
+            <label for="new password">New Password</label>
+            <input type="password" name="passwords[new]" placeholder="New Password">
+
+            <input type="submit" value="Change Password!">
+          </fieldset>
+        </form>
+
+      </section>
+
+      <div style="text-align:center;">
+        <form id="create-game">
+          <button class="game" type="button" value="Create Game!">Create Game!</button>
+        </form>
+      </div>
+
+      <div style="text-align:center;">
+        <p id="get-games"></p>
+        <form id="get-game">
+          <button class="g-game" type="button" value="Get Game!">Get Recent Games!</button>
+        </form>
+      </div>
+
+      <section>
+        <form id="game">
+          <h2>Tic Tac Toe!</h2>
+          <p id="player-win-message"></p>
+          <p id="player-tie-message"></p>
+          <div class="container">
+            <div class="row game-board h-100">
+              <div class="col-4  box" data-cell-index=0></div>
+              <div class="col-4  box" data-cell-index=1></div>
+              <div class="col-4  box" data-cell-index=2></div>
+              <div class="col-4  box" data-cell-index=3></div>
+              <div class="col-4  box" data-cell-index=4></div>
+              <div class="col-4  box" data-cell-index=5></div>
+              <div class="col-4  box" data-cell-index=6></div>
+              <div class="col-4  box" data-cell-index=7></div>
+              <div class="col-4  box" data-cell-index=8></div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <form id="sign-out">
+        <button class="signOut" type="submit">Sign out!</button>
+      </form>
+    </body>
+</html>
